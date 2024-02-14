@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DAISv1.props" />
+</Project>

@@ -1,0 +1,51 @@
+Git for MyAssetAppASP or ~\DAISversion1\DAISv1
+
+
+created new key with ***** ssh-keygen -t ed25519 -C dais.disha@gmail.com
+
+added pub key into github UI -> access -> deploy keys
+----
+ps -a
+kill ssh-agent
+
+
+---
+
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_ed25519
+ssh-add -l -E sha256
+
+ git config --global user.password dais.disha1
+ git remote set-url origin https://github.com/dais-dev/version1.git
+ git config --global user.email dais.disha@gmail.com
+ git config --global user.name dais-dev
+
+
+Windows -> Control Panel -> User Accounts -> Credential Manager  -> change git credentials
+
+
+git config --list
+
+git init
+git add .
+git commit -m "initial commit"
+
+git remote add origin git@github.com:dais-dev/version1.git 
+(**** not  https://github.com/dais-dev/version1.git )
+
+
+
+git remote show origin
+
+git remote -v
+
+
+
+git pull origin main
+
+
+ git branch -M main
+git push -u origin main
+
+git push -f origin main  (force push was required ....)
+

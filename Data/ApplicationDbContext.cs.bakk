@@ -1,0 +1,15 @@
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
+namespace DAISv1.Data;
+
+public class ApplicationDbContext : IdentityDbContext
+{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+    {
+    
+    public DbSet<DAISv1.Models.Asset> Asset { get; set; } = default!;
+    public DbSet<DAISv1.Models.User> User { get; set; } = default!;
+    }
+}

@@ -1,0 +1,110 @@
+DAISversion1 App
+
+C:\Users\Shubhangi\DAISversion1\
+
+
+*1* create app
+dotnet new mvc --auth Individual -uld -o DAISv1
+
+*this will create project folder named DAISv1
+
+*2* open Visual Studio code with app ** may need to exit and open VS code a couple of times
+code -r DAISv1
+
+*3* click trust the authours 
+** 
+
+*4* trust HTTPS development certificate 
+dotnet dev-certs https --trust
+
+*5* run without debugger in VS studio
+
+
+*6* VS Code:  Select View -> Command Pallete -> .NET Generate Assets for Build and Debug
+** check that .vscode directory, launch.json and task.json created
+
+
+
+ *** create /model/Asset.cs, User.cs
+
+
+
+*7* install tools
+
+dotnet tool uninstall --global dotnet-aspnet-codegenerator
+dotnet tool install --global dotnet-aspnet-codegenerator
+dotnet tool uninstall --global dotnet-ef
+dotnet tool install --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SQLite
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+
+*8a* create controllercode
+dotnet aspnet-codegenerator controller -name AssetsController -m Asset  --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries --databaseProvider sqlite
+
+
+*8* create identity code
+
+dotnet aspnet-codegenerator identity --useDefaultUI --databaseProvider sqlite
+
+
+*** check Identitydb in Program.cs exists
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+UseAuthentication();
+
+
+*9*
+update appsettings.json to add connection string for ApplicationDbContext
+
+
+"ConnectionStrings": {
+    "DefaultConnection": "Data Source= aspnet-DAISv1-3166ca07-652e-40e9-b409-547c4335971f;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "DAISv1IdentityDbContextConnection": "Data Source=aspnet-DAISv1-3166ca07-652e-40e9-b409-547c4335971f",
+    "ApplicationDbContext": "Data Source=aspnet-DAISv1-3166ca07-652e-40e9-b409-547c4335971f"
+  },
+
+
+*10**
+add SeedData.cs in Models folder
+
+and call it in Program.cs
+
+*11*
+dotnet ef migrations add CreateIdentitySchemav1 --context ApplicationDbContext
+dotnet ef database update --context ApplicationDbContext
+
+
+**12*
+*** remove pending migrations one by one, if any
+dotnet ef migrations list --context ApplicationDbContext 
+dotnet ef migrations remove --context ApplicationDbContext 
+************
+
+*13* 
+* add nav bar list in _Layout.cshtml
+ * .cshtml for menu in Views folder
+* actions in AssetController.cs
+
+*14* 
+* run thro VS studio. without debugger
+
+* 15 cmd line build**
+dotnet buid
+dotnet publish
+
+* 16 **
+cd bin\Release\net8.0\publish
+
+* check *db file 
+* if null
+copy aspnet-DAISv1-3166ca07-652e-40e9-b409-547c4335971f.db .\bin\Release\net8.0\publish\
+
+
+* run from cmd line
+dotnet DAISv1.dll

@@ -1,0 +1,57 @@
+------------------------------------------------------------------------------
+rough
+
+** create Asset controller  .. scaffold
+aspnet-codegenerator controller -name AssetsController -m Asset -dc DAISidentity.Data.DAISidentityContext --relativeFolder14Path Controllers --useDefaultLayout --referenceScriptLibraries --databaseProvider sqlite
+
+
+dotnet ef migrations add InitialCreate --context DAISidentityContext
+
+
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.AspNetCore.Identity.UI
+
+dotnet ef database update
+
+** change dbcotext in program.cs to DAISidentityContext
+
+builder.Services.AddDbContext<DAISidentityContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionString("DAISidentityContext")));
+
+
+** appsettings.json
+
+"ConnectionStrings": {
+    "DAISidentityContext": "Data Source=DAISidentityContext-fceab9f2-4f6b-4cc4-b128-72a7334813a6.db"
+  } 
+
+
+
+*** Identitydb in Program.cs
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<DAISIdentityContext>();
+
+
+
+* identity code generator
+
+dotnet aspnet-codegenerator identity -dc DAISIdentityContext --files "Account.Register;Account.Login;Account.Logout;Account.RegisterConfirmation" --useSqLite
+
+
+
+** _LoginPartial in _Layout.cshtml
+
+*** program.cs
+builder.Services.Configure<IdentityOptions>(options =>  
+....
+
+builder.Services.ConfigureApplicationCookie(options =>
+....
+
+
+app.MapRazorPages();
+
+
+****

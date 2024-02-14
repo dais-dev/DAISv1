@@ -1,0 +1,13 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=aspnet-DAISv1-3166ca07-652e-40e9-b409-547c4335971f;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "DAISv1IdentityDbContextConnection": "Data Source=DAISv1.db"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
