@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DAISv1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66e0c0f2988f72b9b175100329f1d1d4505457d4")]
 [assembly: System.Reflection.AssemblyProductAttribute("DAISv1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DAISv1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

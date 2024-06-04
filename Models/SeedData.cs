@@ -14,15 +14,17 @@ public static class SeedData
             serviceProvider.GetRequiredService<
                 DbContextOptions<ApplicationDbContext>>()))
         {
-            if (!context.Asset.Any())
-            context.User.AddRange(
-                new User  
-                { UserName = "U1", Password = "P1"},
-                new User 
-                { UserName = "U2", Password = "P2" }
-            );    
-            context.SaveChanges();   
-
+              // this was before ASP Identity
+            // if (!context.Asset.Any()) {
+              
+            // context.User.AddRange(
+             //   new User  
+             //   { UserName = "U1", Password = "P1"},
+            ///    new User 
+            ///    { UserName = "U2", Password = "P2" }
+           /// );    
+           /// context.SaveChanges();   
+            ///}
 
             // Look for any movies.
             if (context.Asset.Any())
@@ -33,64 +35,81 @@ public static class SeedData
                 new Asset
                 {
                     TagId = 111,
-                    Name = "MyPump1",
-                    Location = "Benguluru",
-                    PlantName = "BWSSB",
-                    EquipmentType = "Pump",
-                    MaterialType  = "PumpType1",
+                    AssetMaterialType ="Pump",
+                    EquipmentType = "PumpType1",
+                    AssetCode =  1111122,
+                    AssetQuantity = 1,
+                    AssetRegion = "South",
+                    LocationOfOperation = "LocationO1",
+                    LocationWithRFID = "LocationR1",
+                    Division = "Division1",
                     PurchaseDate = DateTime.Parse("2020-2-12"),
-                    RenewalDate = DateTime.Parse("2024-2-12"),
-                    Price = 0.99M
+                    YearOfInstallation = DateTime.Parse("2024-2-12"),
+                    DesignLifeDate = DateTime.Parse("2020-2-12"),
+                    EndOfPeriodLifeDate = DateTime.Parse("2024-2-12"),
+                    ManufacturerName = "Manufacturer1",
+                    SupplierName = "Supplier1",
+                    ModelSerialNumber =12345
                 },
                 new Asset
                 {
-                    TagId = 222,
-                    Name = "MyPump2",
-                    Location = "Benguluru",
-                    PlantName = "BWSSB",
-                    EquipmentType = "Pump",
-                    MaterialType  = "PumpType1",
-                    PurchaseDate = DateTime.Parse("2019-6-6"),
-                    RenewalDate = DateTime.Parse("2024-6-6"),
-                    Price = 0.89M
+                   TagId = 222,
+                    AssetMaterialType ="Pump",
+                    EquipmentType = "PumpType2",
+                    AssetCode =  1111133,
+                    AssetQuantity = 1,
+                    AssetRegion = "South",
+                    LocationOfOperation = "LocationO1",
+                    LocationWithRFID = "LocationR1",
+                    Division = "Division1",
+                    PurchaseDate = DateTime.Parse("2021-2-12"),
+                    YearOfInstallation = DateTime.Parse("2024-2-12"),
+                    DesignLifeDate = DateTime.Parse("2021-2-12"),
+                    EndOfPeriodLifeDate = DateTime.Parse("2024-2-12"),
+                    ManufacturerName = "Manufacturer1",
+                    SupplierName = "Supplier2",
+                    ModelSerialNumber =123456
                 },
 
                 new Asset
                 {
                     TagId = 333,
-                    Name = "MyValve2",
-                    Location = "Pune",
-                    PlantName = "PuneCityplant",
-                    EquipmentType = "Valve",
-                    MaterialType  = "ValveType2",
-                    PurchaseDate = DateTime.Parse("2022-1-1"),
-                    RenewalDate = DateTime.Parse("2024-1-1"),
-                    Price = 0.08M
+                    AssetMaterialType ="Motor",
+                    EquipmentType = "Manual",
+                    AssetCode =  1111144,
+                    AssetQuantity = 1,
+                    AssetRegion = "South",
+                    LocationOfOperation = "LocationO2",
+                    LocationWithRFID = "LocationR3",
+                    Division = "Division3",
+                    PurchaseDate = DateTime.Parse("2020-2-12"),
+                    YearOfInstallation = DateTime.Parse("2024-2-12"),
+                    DesignLifeDate = DateTime.Parse("2020-2-12"),
+                    EndOfPeriodLifeDate = DateTime.Parse("2024-2-12"),
+                    ManufacturerName = "Manufacturer1",
+                    SupplierName = "Supplier1",
+                    ModelSerialNumber =1234567
                 },
                 new Asset
                 {
-                    TagId = 444,
-                    Name = "MyPump3",
-                    Location = "Pune",
-                    PlantName = "PuneCityplant",
-                    EquipmentType = "Pump",
-                    MaterialType  = "PumpType2",
-                    PurchaseDate = DateTime.Parse("2023-2-2"),
-                    RenewalDate = DateTime.Parse("2026-2-2"),
-                    Price = 1.2M
-                },
-                new Asset
-                {
-                    TagId = 555,
-                    Name = "MyValve1",
-                    Location = "Pune",
-                    PlantName = "PuneCityplant",
-                    EquipmentType = "Valve",
-                    MaterialType  = "ValveType1",
-                    PurchaseDate = DateTime.Parse("2021-5-3"),
-                    RenewalDate = DateTime.Parse("2025-5-3"),
-                    Price = 0.07M
-                }                
+                 TagId = 444,
+                    AssetMaterialType ="Motor",
+                    EquipmentType = "Auto",
+                    AssetCode =  1111155,
+                    AssetQuantity = 1,
+                    AssetRegion = "West",
+                    LocationOfOperation = "LocationO1",
+                    LocationWithRFID = "LocationR1",
+                    Division = "Division1",
+                    PurchaseDate = DateTime.Parse("2022-2-12"),
+                    YearOfInstallation = DateTime.Parse("2025-2-12"),
+                    DesignLifeDate = DateTime.Parse("2022-2-12"),
+                    EndOfPeriodLifeDate = DateTime.Parse("2025-2-12"),
+                    ManufacturerName = "Manufacturer4",
+                    SupplierName = "Supplier4",
+                    ModelSerialNumber =12345678   
+                }
+               
             );
             context.SaveChanges();
 

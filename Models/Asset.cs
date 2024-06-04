@@ -7,18 +7,26 @@ public class Asset
 {
     [Required][Key]
     public int TagId { get; set; }
-    public int SerialNumber { get; set; }
-    public string? Name { get; set; }
-    public string? Location { get; set; }
-    public string? PlantName { get; set; }
+    public string? AssetMaterialType { get; set; }
     public string? EquipmentType { get; set; }
-    public string? MaterialType { get; set; }
+    public int AssetCode { get; set; }
+    public int AssetQuantity { get; set; } = 1;
+    public string? AssetRegion { get; set; }
+    public string? LocationOfOperation { get; set; }
+    public string? LocationWithRFID { get; set; }
+    public string? Division { get; set; }
     [DataType(DataType.Date)]
     public DateTime PurchaseDate { get; set; }
-    [Display(Name = "ReNewal Date")]
+    
     [DataType(DataType.Date)]
-    public DateTime RenewalDate { get; set; }
+    [DisplayFormat(DataFormatString = "{0:yyyy}", ApplyFormatInEditMode = true)]
+    public DateTime YearOfInstallation { get; set; }
+    [DataType(DataType.Date)]
+    public DateTime DesignLifeDate { get; set; }
+    [DataType(DataType.Date)]
+    public DateTime EndOfPeriodLifeDate { get; set; }
     public string? ManufacturerName { get; set; }
-    [Column(TypeName = "decimal(18, 2)")]
-    public decimal Price { get; set; }
+    public string? SupplierName { get; set; }
+    public int ModelSerialNumber    { get; set; }
+
 }

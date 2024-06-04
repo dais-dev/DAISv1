@@ -27,9 +27,15 @@ dotnet dev-certs https --trust
 
  *** create /model/Asset.cs, User.cs
 
-
+*y* change to sqlite in Program.cs
+** add DbSet in ApplicationDbContext.cs
+** appsettigs.json add ApplicationDbContext connection string
+*y*  dotnet ef migrations add InitialCreate 
+*y*dotnet ef database update
 
 *7* install tools
+
+cd projdir
 
 dotnet tool uninstall --global dotnet-aspnet-codegenerator
 dotnet tool install --global dotnet-aspnet-codegenerator
@@ -107,4 +113,4 @@ copy aspnet-DAISv1-3166ca07-652e-40e9-b409-547c4335971f.db .\bin\Release\net8.0\
 
 
 * run from cmd line
-dotnet DAISv1.dll
+dotnet DAISv1.dll 

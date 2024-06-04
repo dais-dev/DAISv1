@@ -13,34 +13,49 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.SerialNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Location)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlantName)
+                @Html.DisplayNameFor(model => model.AssetMaterialType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.EquipmentType)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MaterialType)
+                @Html.DisplayNameFor(model => model.AssetCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssetQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssetRegion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationOfOperation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationWithRFID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Division)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PurchaseDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RenewalDate)
+                @Html.DisplayNameFor(model => model.YearOfInstallation)
             </th>
-            <th>
+                        <th>
+                @Html.DisplayNameFor(model => model.DesignLifeDate)
+            </th>
+                        <th>
+                @Html.DisplayNameFor(model => model.EndOfPeriodLifeDate)
+            </th>
+                        <th>
                 @Html.DisplayNameFor(model => model.ManufacturerName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
+                        <th>
+                @Html.DisplayNameFor(model => model.SupplierName)
+            </th>
+                        <th>
+                @Html.DisplayNameFor(model => model.ModelSerialNumber)
             </th>
             <th></th>
         </tr>
@@ -49,34 +64,49 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.SerialNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlantName)
+                @Html.DisplayFor(modelItem => item.AssetMaterialType)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EquipmentType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MaterialType)
+                @Html.DisplayFor(modelItem => item.AssetCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssetQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssetRegion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationOfOperation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationWithRFID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Division)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PurchaseDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RenewalDate)
+                @Html.DisplayFor(modelItem => item.YearOfInstallation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesignLifeDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndOfPeriodLifeDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ManufacturerName)
+            </td>           
+             <td>
+                @Html.DisplayFor(modelItem => item.SupplierName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.ModelSerialNumber)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.TagId">Edit</a> |

@@ -13,44 +13,64 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="SerialNumber" class="control-label"></label>
-                <input asp-for="SerialNumber" class="form-control" />
-                <span asp-validation-for="SerialNumber" class="text-danger"></span>
+                <label asp-for="AssetMaterialType" class="control-label"></label>
+                <input asp-for="AssetMaterialType" class="form-control" />
+                <span asp-validation-for="AssetMaterialType" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Location" class="control-label"></label>
-                <input asp-for="Location" class="form-control" />
-                <span asp-validation-for="Location" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PlantName" class="control-label"></label>
-                <input asp-for="PlantName" class="form-control" />
-                <span asp-validation-for="PlantName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+             <div class="form-group">
                 <label asp-for="EquipmentType" class="control-label"></label>
                 <input asp-for="EquipmentType" class="form-control" />
                 <span asp-validation-for="EquipmentType" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MaterialType" class="control-label"></label>
-                <input asp-for="MaterialType" class="form-control" />
-                <span asp-validation-for="MaterialType" class="text-danger"></span>
+                <label asp-for="AssetCode" class="control-label"></label>
+                <input asp-for="AssetCode" class="form-control" />
+                <span asp-validation-for="AssetCode" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="AssetQuantity" class="control-label"></label>
+                <input asp-for="AssetQuantity" class="form-control" />
+                <span asp-validation-for="AssetQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssetRegion" class="control-label"></label>
+                <input asp-for="AssetRegion" class="form-control" />
+                <span asp-validation-for="AssetRegion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationOfOperation" class="control-label"></label>
+                <input asp-for="LocationOfOperation" class="form-control" />
+                <span asp-validation-for="LocationOfOperation" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label asp-for="LocationWithRFID" class="control-label"></label>
+                <input asp-for="LocationWithRFID" class="form-control" />
+                <span asp-validation-for="LocationWithRFID" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label asp-for="Division" class="control-label"></label>
+                <input asp-for="Division" class="form-control" />
+                <span asp-validation-for=Division class="text-danger"></span>
             <div class="form-group">
                 <label asp-for="PurchaseDate" class="control-label"></label>
                 <input asp-for="PurchaseDate" class="form-control" />
                 <span asp-validation-for="PurchaseDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RenewalDate" class="control-label"></label>
-                <input asp-for="RenewalDate" class="form-control" />
-                <span asp-validation-for="RenewalDate" class="text-danger"></span>
+                <label asp-for="YearOfInstallation" class="control-label"></label>
+                <input asp-for="YearOfInstallation" class="form-control" />
+                <span asp-validation-for="YearOfInstallation" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesignLifeDate" class="control-label"></label>
+                <input asp-for="DesignLifeDate" class="form-control" />
+                <span asp-validation-for="DesignLifeDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndOfPeriodLifeDate" class="control-label"></label>
+                <input asp-for="EndOfPeriodLifeDate" class="form-control" />
+                <span asp-validation-for="EndOfPeriodLifeDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ManufacturerName" class="control-label"></label>
@@ -58,9 +78,14 @@
                 <span asp-validation-for="ManufacturerName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
+                <label asp-for="SupplierName" class="control-label"></label>
+                <input asp-for="SupplierName" class="form-control" />
+                <span asp-validation-for="SupplierName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModelSerialNumber" class="control-label"></label>
+                <input asp-for="ModelSerialNumber" class="form-control" />
+                <span asp-validation-for="ModelSerialNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
