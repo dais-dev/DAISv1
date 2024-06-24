@@ -114,3 +114,39 @@ copy aspnet-DAISv1-3166ca07-652e-40e9-b409-547c4335971f.db .\bin\Release\net8.0\
 
 * run from cmd line
 dotnet DAISv1.dll 
+
+
+
+
+
+
+
+
+
+-----------------
+17
+Identity Login change to username password
+
+dotnet aspnet-codegenerator identity -dc ApplicationDbContext --databaseProvider sqlite --files "Account.Register;Account.Login"
+
+
+18
+change to false in Program.cs
+
+////// changed to false for noemail confirmation when login is changed to username
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+copied from Protrac /
+changed login and register cshtml and cs files in Areas/Identity/Pages/Account
+
+
+
+
+
+
+
+
+
+

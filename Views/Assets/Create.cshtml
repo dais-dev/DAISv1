@@ -19,7 +19,8 @@
             </div>
              <div class="form-group">
                 <label asp-for="EquipmentType" class="control-label"></label>
-                <input asp-for="EquipmentType" class="form-control" />
+                
+            <select asp-for="EquipmentType" class="form-control" asp-items="ViewBag.EquipmentTypes"></select>
                 <span asp-validation-for="EquipmentType" class="text-danger"></span>
             </div>
             <div class="form-group">

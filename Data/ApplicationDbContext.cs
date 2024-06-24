@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using DAISv1.Models;
 namespace DAISv1.Data;
@@ -13,5 +13,7 @@ public class ApplicationDbContext : IdentityDbContext
     
     public DbSet<Asset> Asset { get; set; } = default!;
     public DbSet<User> User { get; set; } = default!;
+
+public DbSet<DAISv1.Models.AssetParameterOptions> AssetParameterOptions { get; set; } = default!;
     
 }

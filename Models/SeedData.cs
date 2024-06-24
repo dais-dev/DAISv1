@@ -29,6 +29,7 @@ public static class SeedData
             // Look for any movies.
             if (context.Asset.Any())
             {
+ 
                 return;   // DB has been seeded
             }
             context.Asset.AddRange(

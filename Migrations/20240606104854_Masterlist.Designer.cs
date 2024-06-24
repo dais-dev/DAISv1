@@ -3,6 +3,7 @@ using System;
 using DAISv1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAISv1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240606104854_Masterlist")]
+    partial class Masterlist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.1");
@@ -29,10 +32,18 @@ namespace DAISv1.Migrations
                     b.Property<string>("AssetMaterialType")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("AssetMaterialTypes")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("AssetQuantity")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("AssetRegion")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AssetRegions")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DesignLifeDate")
@@ -41,10 +52,18 @@ namespace DAISv1.Migrations
                     b.Property<string>("Division")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Divisions")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("EndOfPeriodLifeDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("EquipmentType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EquipmentTypes")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LocationOfOperation")
@@ -53,7 +72,19 @@ namespace DAISv1.Migrations
                     b.Property<string>("LocationWithRFID")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("LocationsOfOperation")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LocationsWithRFID")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("ManufacturerName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ManufacturerNames")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("ModelSerialNumber")
@@ -65,55 +96,16 @@ namespace DAISv1.Migrations
                     b.Property<string>("SupplierName")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("SupplierNames")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("YearOfInstallation")
                         .HasColumnType("TEXT");
 
                     b.HasKey("TagId");
 
                     b.ToTable("Asset");
-                });
-
-            modelBuilder.Entity("DAISv1.Models.AssetParameterOptions", b =>
-                {
-                    b.Property<int>("ParaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("AssetMaterialTypes")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("AssetRegions")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Divisions")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("EquipmentTypes")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LocationsOfOperation")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LocationsWithRFID")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ManufacturerNames")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SupplierNames")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ParaId");
-
-                    b.ToTable("AssetParameterOptions");
                 });
 
             modelBuilder.Entity("DAISv1.Models.User", b =>

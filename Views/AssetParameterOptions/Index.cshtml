@@ -1,0 +1,78 @@
+@model IEnumerable<DAISv1.Models.AssetParameterOptions>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EquipmentTypes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssetMaterialTypes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssetRegions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationsOfOperation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationsWithRFID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Divisions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ManufacturerNames)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierNames)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EquipmentTypes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssetMaterialTypes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssetRegions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationsOfOperation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationsWithRFID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Divisions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufacturerNames)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierNames)
+            </td>
+            <td>
+                <a asp-action="EditAssetMaterialType" asp-route-id="@item.ParaId">Edit Asset Material Types Master</a> |
+                <a asp-action="EditEquipmentType" asp-route-id="@item.ParaId">Edit Equipment Types Master</a> |
+                <a asp-action="Details" asp-route-id="@item.ParaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ParaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
