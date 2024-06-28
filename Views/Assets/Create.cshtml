@@ -14,13 +14,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="AssetMaterialType" class="control-label"></label>
-                <input asp-for="AssetMaterialType" class="form-control" />
+                <select asp-for="AssetMaterialType" class="form-control" asp-items="ViewBag.AssetMaterialTypes"></select>
                 <span asp-validation-for="AssetMaterialType" class="text-danger"></span>
             </div>
              <div class="form-group">
                 <label asp-for="EquipmentType" class="control-label"></label>
-                
-            <select asp-for="EquipmentType" class="form-control" asp-items="ViewBag.EquipmentTypes"></select>
+                <select asp-for="EquipmentType" class="form-control" asp-items="ViewBag.EquipmentTypes"></select>
                 <span asp-validation-for="EquipmentType" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,12 +34,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="AssetRegion" class="control-label"></label>
+                <select asp-for="AssetRegion" class="form-control" asp-items="ViewBag.AssetRegions"></select>
                 <input asp-for="AssetRegion" class="form-control" />
                 <span asp-validation-for="AssetRegion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LocationOfOperation" class="control-label"></label>
-                <input asp-for="LocationOfOperation" class="form-control" />
+                <select asp-for="LocationOfOperation" class="form-control" asp-items="ViewBag.LocationsOfOperation"></select>
                 <span asp-validation-for="LocationOfOperation" class="text-danger"></span>
             </div>
            <div class="form-group">
@@ -50,7 +50,7 @@
             </div>
            <div class="form-group">
                 <label asp-for="Division" class="control-label"></label>
-                <input asp-for="Division" class="form-control" />
+                <select asp-for="Division" class="form-control" asp-items="ViewBag.Divisions"></select>
                 <span asp-validation-for=Division class="text-danger"></span>
             <div class="form-group">
                 <label asp-for="PurchaseDate" class="control-label"></label>
@@ -75,12 +75,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="ManufacturerName" class="control-label"></label>
-                <input asp-for="ManufacturerName" class="form-control" />
+                <select asp-for="ManufacturerName" class="form-control" asp-items="ViewBag.ManufacturerNames"></select>
                 <span asp-validation-for="ManufacturerName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SupplierName" class="control-label"></label>
-                <input asp-for="SupplierName" class="form-control" />
+                <select asp-for="SupplierName" class="form-control" asp-items="ViewBag.SupplierNames"></select>
                 <span asp-validation-for="SupplierName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -93,6 +93,30 @@
             </div>
         </form>
     </div>
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-4">
+
+     
+
+        <form method="post" enctype="multipart/form-data" asp-action="Upload">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div> Product Manual file </div>
+            <div class="form-group">
+                <input type="file" name="ProductManual" />
+                <input type="submit" value="Upload" />
+            </div>
+            
+
+            <div> .... </div>
+            <div> O&M Manual file from OEM </div>
+            <div class="form-group">
+                <input type="file" name="OEMManual" />
+                <input type="submit" value="Upload" />
+            </div>
+        </form>
+    </div>    
 </div>
 
 <div>

@@ -54,11 +54,58 @@ public IActionResult AdminActions()
             return View();
         }
 
+        public IActionResult Upload()
+        {
+            return View();
+        }
+
         public List<string> GetEquipmentTypesFromMaster()
         {
             // This method should retrieve the list of equipment types defined by the admin
             // For example, it could retrieve the list from a database or configuration file
             return new List<string> { "EquipType1", "EquipType2", "EquipType3" };
+        }
+
+        public List<string> GetAssetRegionsFromMaster()
+        {
+            // This method should retrieve the list of equipment types defined by the admin
+            // For example, it could retrieve the list from a database or configuration file
+            return new List<string> { "AssetRegion1", "AssetRegion2", "AssetRegion3" };
+        }
+
+        public List<string> GetLocationsOfOperationFromMaster()
+        {
+            // This method should retrieve the list of equipment types defined by the admin
+            // For example, it could retrieve the list from a database or configuration file
+            return new List<string> { "LocationOfOperation1", "LocationOfOperation2", "LocationOfOperation3" };
+        }
+
+        public List<string> GetDivisionsFromMaster()
+        {
+            // This method should retrieve the list of equipment types defined by the admin
+            // For example, it could retrieve the list from a database or configuration file
+            return new List<string> { "Division1", "Division2", "Division3" };
+        }
+
+        public List<string> GetManufacturerNamesFromMaster()
+        {
+            // This method should retrieve the list of equipment types defined by the admin
+            // For example, it could retrieve the list from a database or configuration file
+            return new List<string> { "Manufacturer1", "Manufacturer2", "Manufacturer3" };
+        }
+
+        public List<string> GetSupplierNamesFromMaster()
+        {
+            // This method should retrieve the list of equipment types defined by the admin
+            // For example, it could retrieve the list from a database or configuration file
+            return new List<string> { "Supplier1", "Supplier2", "Supplier3" };
+        }
+
+        public List<string> GetAssetMaterialTypesFromMaster()
+        {
+            // This method should retrieve the list of equipment types defined by the admin
+            // For example, it could retrieve the list from a database or configuration file
+            return new List<string> { "AssetMaterialType1", "AssetMaterialType2", "AssetMaterialType3" };
         }
 
         public async Task<IActionResult> DeleteAssetTable()
@@ -104,11 +151,31 @@ public IActionResult AdminActions()
         {
             
                 var equipmentTypes = GetEquipmentTypesFromMaster();
-
-         //       ViewData["EquipmentTypes"] = new SelectList(new string[] {EquipmentTypes });
+             //       ViewData["EquipmentTypes"] = new SelectList(new string[] {EquipmentTypes });
                 ViewData["EquipmentTypes"] = new SelectList(equipmentTypes);
             
             // This should come from your data source or business logic
+    
+                var AssetMaterialTypes = GetAssetMaterialTypesFromMaster();
+                 ViewData["AssetMaterialTypes"] = new SelectList(AssetMaterialTypes);
+    
+            var AssetRegions = GetAssetRegionsFromMaster();
+                 ViewData["AssetRegions"] = new SelectList(AssetRegions);
+
+            var LocationsOfOperation = GetLocationsOfOperationFromMaster();
+                 ViewData["LocationsOfOperation"] = new SelectList(LocationsOfOperation);
+
+            var Divisions = GetDivisionsFromMaster();
+                 ViewData["Divisions"] = new SelectList(Divisions);
+
+            var ManufacturerNames = GetManufacturerNamesFromMaster();
+                 ViewData["ManufacturerNames"] = new SelectList(ManufacturerNames);
+            
+            var SupplierNames = GetSupplierNamesFromMaster();
+                 ViewData["SupplierNames"] = new SelectList(SupplierNames);
+
+            
+
             return View();
         }
 

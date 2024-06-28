@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MQGu9KWMk6ef7Nw62NfPTz7VrOw3muelJuM6sy1i6TE=",
+  "Hash": "8c+HBexl7xLhSmV/VtIBapUrKd/aGMc3cVX+aQZDFYM=",
   "Source": "DAISv1",
   "BasePath": "_content/DAISv1",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Shubhangi\\DAISversion1\\DAISv1\\wwwroot\\images\\AssetPic2.jpg",
+      "SourceId": "DAISv1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Shubhangi\\DAISversion1\\DAISv1\\wwwroot\\",
+      "BasePath": "_content/DAISv1",
+      "RelativePath": "images/AssetPic2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\AssetPic2.jpg"
     },
     {
       "Identity": "C:\\Users\\Shubhangi\\DAISversion1\\DAISv1\\wwwroot\\js\\site.js",

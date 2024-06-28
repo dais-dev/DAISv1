@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Shubhangi\\DAISversion1\\DAISv1\\wwwroot\\images\\AssetPic2.jpg",
+      "PackagePath": "staticwebassets\\images\\AssetPic2.jpg"
+    },
+    {
       "Id": "C:\\Users\\Shubhangi\\DAISversion1\\DAISv1\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
